@@ -7,25 +7,24 @@
 
 using namespace std;
 
+Player player;
 World world;
 
 int main() {
     ChangeDirectory("/home/declan/Projects/C++/retrohitman");
 
+    world.player = &player;
+
     world.Load("resources/worlds/world1");
     world.Unload();
-
-    return 0;
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(700, 400, "game");
 
-    while(!WindowShouldClose()) {
-        Renderer::BeginRender();
-        {
+    Renderer::Init(&world);
 
-        }
-        Renderer::EndRender();
+    while(!WindowShouldClose()) {
+        Renderer::RenderWorld();
     }
 
     CloseWindow();

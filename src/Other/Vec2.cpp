@@ -126,11 +126,3 @@ Vec2<int> iVec2FromStr(string s) {
         stoi(tokens[1])
     };
 }
-
-float Modf(float a, float n) {
-    return a - floor(a/n) * n;
-}
-
-float RotaryDistance(float a, float b) {
-    return abs(Modf(a - b + PI, PI * 2) - PI);
-}

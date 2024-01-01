@@ -1,4 +1,7 @@
+#pragma once
+
 #include "Other/Types.cpp"
+#include "Player.cpp"
 #include <sstream>
 #include <iostream>
 
@@ -12,6 +15,7 @@ class World {
     public:
     Vec2<int> start;
     string name = "NULL";
+    Player * player;
 
     void Load(cstr filename) {
         // Load the world file
