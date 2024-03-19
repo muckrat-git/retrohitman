@@ -1,9 +1,0 @@
-Map data files are layed out in the following format:
-
-1 | [title]
-2 | [width]:[height]
-..| ## ## ## ## ...
-
-# represents a single base16 digit (0-F Hex Form)
-Each symbol on line 3+ contains 2 hexidecimal digits internally used to form an index from 0-255 per tile
-newlines will be counted as spaces from line 3 onward

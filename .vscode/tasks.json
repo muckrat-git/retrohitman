@@ -11,7 +11,8 @@
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-I./",
-                "-lraylib"
+                "-lraylib",
+                "-I./src"
             ],
             "options": {
                 "cwd": "${fileDirname}"

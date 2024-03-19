@@ -1,0 +1,10 @@
+# [texture]                     [flag1] [flag2] ...
+resources/tiles/grass.png       AIR TRA
+resources/tiles/grass_mush.png  AIR TRA
+resources/tiles/tree.png        TRA
+resources/tiles/fence1.png      TRA
+resources/tiles/fence2.png      TRA
+resources/tiles/fence3.png      TRA
+resources/tiles/fence4.png      TRA
+resources/tiles/fence5.png      TRA
+resources/tiles/fence6.png      TRA
