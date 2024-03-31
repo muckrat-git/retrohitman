@@ -8,3 +8,6 @@ resources/tiles/fence3.png      TRA
 resources/tiles/fence4.png      TRA
 resources/tiles/fence5.png      TRA
 resources/tiles/fence6.png      TRA
+resources/tiles/road3.png       AIR TRA
+resources/tiles/road4.png       AIR TRA
+resources/tiles/brick.png       AIR TRA

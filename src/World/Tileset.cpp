@@ -99,4 +99,9 @@ namespace Tileset {
             tiles.push_back(tile);
         }
     }
+    
+    // Unload tileset
+    void Unload() {
+        for(int i = 0; i < tiles.size(); ++i) tiles[i].Unload();
+    }
 };

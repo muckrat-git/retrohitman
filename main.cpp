@@ -69,5 +69,9 @@ int main() {
         }
     }
 
+    // Unload everything
+    Tileset::Unload();
+
+    // Close window
     CloseWindow();
 }

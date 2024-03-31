@@ -100,7 +100,7 @@ namespace Renderer {
         BeginDrawing();
         {
             // Predefine texture, ratio, and world pos
-            Texture2D tex;
+            Texture2D * tex;
             float ratio;
             Vec2<int> worldPos;
 
@@ -115,18 +115,18 @@ namespace Renderer {
 
                     // Get tile
                     if(world->OutOfBounds(worldPos)) {
-                        tex = Tileset::tiles[0].mipmaps[mipmap];
+                        tex = &Tileset::tiles[0].mipmaps[mipmap];
                     }
                     else {
                         const u16 tile = world->Get(worldPos);
 
                         // Get texture
-                        tex = Tileset::tiles[tile].mipmaps[mipmap];
+                        tex = &Tileset::tiles[tile].mipmaps[mipmap];
                     }
 
                     // Calculate display variables
-                    ratio = (float)tex.height / Tileset::size[mipmap];
-                    const Vec2<float> texSize = vec2(((float)tex.width * tileSize / Tileset::size[mipmap]), tileSize * ratio);
+                    ratio = (float)tex->height / Tileset::size[mipmap];
+                    const Vec2<float> texSize = vec2(((float)tex->width * tileSize / Tileset::size[mipmap]), tileSize * ratio);
 
                     // Set texture tint
                     Color tint = WHITE;
@@ -136,7 +136,7 @@ namespace Renderer {
                         tint = world->OutOfBounds(player->hoverTile) ? (Color){255, 100, 100, 255} : LIGHTGRAY;
 
                     DrawTextureFast(
-                        tex, 
+                        *tex, 
                         {
                             (window.x / 2) + ((x - offset.x) * tileSize) - ((texSize.x - tileSize) / 2), 
                             (window.y / 2) + ((y - offset.y) * tileSize) - texSize.y + tileSize - 1,
